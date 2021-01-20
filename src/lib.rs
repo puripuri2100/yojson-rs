@@ -103,7 +103,7 @@ pub fn to_string(value: value::Value) -> String {
     value::Value::Bool(b) => b.to_string(),
     value::Value::Integer(i) => i.to_string(),
     value::Value::Float(f) => f.to_string(),
-    value::Value::String(s) => s,
+    value::Value::String(s) => format!("{:?}", s),
     value::Value::Assoc(assoc) => {
       let mut s = String::new();
       for (i, item) in assoc.iter().enumerate() {

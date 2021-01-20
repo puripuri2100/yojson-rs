@@ -50,11 +50,11 @@ float = @{
   "-"?
   ~ ("0" | ASCII_NONZERO_DIGIT ~ ASCII_DIGIT*)
   ~ "."
-  ~ ASCII_DIGIT*
+  ~ ASCII_DIGIT+
   ~ (
     ("e" | "E")
     ~ ("-" | "+")?
-    ~ ASCII_DIGIT*
+    ~ ASCII_DIGIT+
   )?
 }
 
