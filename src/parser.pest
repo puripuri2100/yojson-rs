@@ -1,0 +1,81 @@
+// https://www.json.org/json-en.html
+// https://mjambon.github.io/mjambon2016/yojson.html
+WHITESPACE = _{ " " | "\t" | "\r" | "\n" }
+COMMENT = _{
+  "/*" ~ (!"*/" ~ ANY)* ~ "*/" |
+  "//" ~ (!"\n" ~ ANY)* ~ "\n"
+}
+
+json = _{ SOI ~ assoc ~ EOI }
+
+assoc = {
+  "{" ~ "}" |
+  "{" ~ pair ~ ("," ~ pair)* ~ ","? ~ "}"
+}
+
+pair = { name ~ ":" ~ value }
+
+name = _{
+  quoted_string | unquoted_string
+}
+
+quoted_string = ${ "\"" ~ inner ~ "\"" }
+
+inner = ${ (c | escape_char | unicode_char)* }
+
+c = { !("\"" | "\\") ~ ANY }
+
+escape_char = { "\\" ~ ("\"" | "\\" | "/" | "b" | "f" | "n" | "r" | "t") }
+
+unicode_char = { "\\u" ~ ASCII_HEX_DIGIT{4} }
+
+unquoted_string = ${ ascii_inner }
+
+ascii_inner = @{ ascii_char* }
+
+ascii_char = _{
+  ('a'..'z' | 'A'..'Z') ~ ('a'..'z' | 'A'..'Z' | '0'..'9' | "_")*
+}
+
+value = _{ null | bool | integer | float | string | assoc | array | tuple | variant }
+
+null = { "null" }
+
+bool = { "true" | "false" }
+
+integer = @{
+  "-"?
+  ~ ("0" | ASCII_NONZERO_DIGIT ~ ASCII_DIGIT*)
+}
+
+float = @{
+  "NaN" |
+  "Infinity" |
+  "-Infinity" |
+  "-"?
+  ~ ("0" | ASCII_NONZERO_DIGIT ~ ASCII_DIGIT*)
+  ~ "."
+  ~ ASCII_DIGIT*
+  ~ (
+    ("e" | "E")
+    ~ ("-" | "+")?
+    ~ ASCII_DIGIT*
+  )?
+}
+
+string = { "\"" ~ inner ~ "\"" }
+
+array = {
+  "[" ~ "]" |
+  "[" ~ value ~ ("," ~ value)* ~ ","? ~ "]"
+}
+
+tuple = {
+  "(" ~ value ~ ("," ~ value)* ~ ")"
+}
+
+variant = {
+  "<" ~ name ~ ">" |
+  "<" ~ name ~ ":" ~ value ~ ">"
+}
+
