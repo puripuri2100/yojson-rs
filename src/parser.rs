@@ -23,8 +23,7 @@ fn parse_value(pair: Pair<Rule>) -> value::Value {
     Rule::integer => value::Value::Integer(pair.as_str().parse().unwrap()),
     Rule::float => {
       let str = pair.as_str();
-      let f =
-      if str == "NaN" {
+      let f = if str == "NaN" {
         f64::NAN
       } else if str == "Infinity" {
         f64::INFINITY
