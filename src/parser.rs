@@ -1,3 +1,5 @@
+//! Definition of a parse fucntion.
+
 use crate::pest::Parser;
 use pest::iterators::Pair;
 use std::collections::HashMap;
