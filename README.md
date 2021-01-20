@@ -4,8 +4,8 @@
 [![source badge][source-badge]][source]
 [![license badge][license-badge]][license]
 
-[ci]: https://github.com/puripuri2100/yojson-rs/actions?query=workflow%3ARust%20CI
-[ci-badge]: https://github.com/puripuri2100/yojson-rs/workflows/Rust%20CI/badge.svg?branch=master
+[ci]: https://github.com/puripuri2100/yojson-rs/actions?query=workflow%3ACI
+[ci-badge]: https://github.com/puripuri2100/yojson-rs/workflows/CI/badge.svg?branch=master
 [source]: https://github.com/puripuri2100/yojson-rs
 [source-badge]: https://img.shields.io/badge/source-github-blue
 [license]: https://github.com/puripuri2100/yojson-rs/blob/master/LICENSE
