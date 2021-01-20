@@ -1,8 +1,14 @@
 [package]
 name = "yojson-rs"
 version = "0.1.0"
-authors = ["puripuri2100 <puripuri2100@gmail.com>"]
+authors = ["Naoki Kaneko <puripuri2100@gmail.com>"]
 edition = "2018"
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/puripuri2100/yojson-rs"
+keywords = ["json", "parser"]
+categories = ["encoding"]
+description = "A parser for Yojson format(https://mjambon.github.io/mjambon2016/yojson.html)."
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
