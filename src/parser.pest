@@ -37,16 +37,11 @@ ascii_char = _{
   ('a'..'z' | 'A'..'Z') ~ ('a'..'z' | 'A'..'Z' | '0'..'9' | "_")*
 }
 
-value = _{ null | bool | integer | float | string | assoc | array | tuple | variant }
+value = _{ null | bool | float | integer | string | assoc | array | tuple | variant }
 
 null = { "null" }
 
 bool = { "true" | "false" }
-
-integer = @{
-  "-"?
-  ~ ("0" | ASCII_NONZERO_DIGIT ~ ASCII_DIGIT*)
-}
 
 float = @{
   "NaN" |
@@ -62,6 +57,12 @@ float = @{
     ~ ASCII_DIGIT*
   )?
 }
+
+integer = @{
+  "-"?
+  ~ ("0" | ASCII_NONZERO_DIGIT ~ ASCII_DIGIT*)
+}
+
 
 string = { "\"" ~ inner ~ "\"" }
 

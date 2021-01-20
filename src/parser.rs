@@ -21,7 +21,20 @@ fn parse_value(pair: Pair<Rule>) -> value::Value {
     Rule::null => value::Value::Null,
     Rule::bool => value::Value::Bool(pair.as_str().parse().unwrap()),
     Rule::integer => value::Value::Integer(pair.as_str().parse().unwrap()),
-    Rule::float => value::Value::Float(pair.as_str().parse().unwrap()),
+    Rule::float => {
+      let str = pair.as_str();
+      let f =
+      if str == "NaN" {
+        f64::NAN
+      } else if str == "Infinity" {
+        f64::INFINITY
+      } else if str == "-Infinity" {
+        f64::NEG_INFINITY
+      } else {
+        str.parse().unwrap()
+      };
+      value::Value::Float(f)
+    }
     Rule::string => {
       let str = parse_string(pair.into_inner().next().unwrap());
       value::Value::String(str)
