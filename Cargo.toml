@@ -9,6 +9,7 @@ repository = "https://github.com/puripuri2100/yojson-rs"
 keywords = ["json", "parser"]
 categories = ["encoding"]
 description = "A parser for Yojson format(https://mjambon.github.io/mjambon2016/yojson.html)."
+exclude = ["tests/*", ".github/*"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
