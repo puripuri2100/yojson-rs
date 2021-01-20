@@ -39,10 +39,7 @@ pub type Variant = (String, Option<Box<Value>>);
 impl Value {
   /// Tests whether this value is a null.
   pub fn is_null(&self) -> bool {
-    match self {
-      Value::Null => true,
-      _ => false,
-    }
+    matches!(self, Value::Null)
   }
 
   /// Extracts the integer value if it is an integer.
