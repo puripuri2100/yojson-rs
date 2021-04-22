@@ -61,7 +61,7 @@ fn main () {
             "y1" : "abc\ndef\u0021",
             "y2" : [null, 123.45, (12, "y3")]
           },
-      z : NaN,
+      z : NaN
     }
     "#;
   assert!(yojson_rs::parser::parse(json).is_ok());
@@ -82,7 +82,7 @@ fn main() {
              "y1" : "abc\ndef\u0021",
              "y2" : [null, 123.45, (12, "y3")]
           },
-      z : NaN,
+      z : NaN
     }
     "#;
   let json = yojson_rs::parser::parse(json_str).unwrap();
