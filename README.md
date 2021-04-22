@@ -7,9 +7,9 @@
 [![license badge][license-badge]][license]
 
 [crates]: https://crates.io/crates/yojson-rs
-[crates-badge]: https://img.shields.io/crates/v/yojson-rs?style=flat-square
+[crates-badge]: https://img.shields.io/crates/v/yojson-rs
 [docs]: https://docs.rs/yojson-rs/
-[docs-badge]: https://img.shields.io/badge/docs.rs-yojson_rs-blue?style=flat-square
+[docs-badge]: https://img.shields.io/badge/docs.rs-yojson_rs-blue
 [ci]: https://github.com/puripuri2100/yojson-rs/actions?query=workflow%3ACI
 [ci-badge]: https://github.com/puripuri2100/yojson-rs/workflows/CI/badge.svg?branch=master
 [source]: https://github.com/puripuri2100/yojson-rs
