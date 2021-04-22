@@ -6,6 +6,7 @@ use std::collections::HashMap;
 
 use super::value;
 
+#[allow(clippy::upper_case_acronyms)]
 #[derive(Parser)]
 #[grammar = "parser.pest"]
 struct YojsonParser;
