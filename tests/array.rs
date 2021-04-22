@@ -34,9 +34,7 @@ mod tests {
         yojson_rs::value::Value::Assoc(assoc2),
       ]),
     );
-    assert!(
-      yojson_rs::parser::parse("{hoge : [null, 123, {fuga: 23}, ]}").is_err()
-    );
+    assert!(yojson_rs::parser::parse("{hoge : [null, 123, {fuga: 23}, ]}").is_err());
   }
 }
 
@@ -53,7 +51,5 @@ fn check_3() {
       yojson_rs::value::Value::Assoc(assoc2),
     ]),
   );
-  assert!(
-    yojson_rs::parser::parse("{hoge : [null, 123, {fuga: 23}],}").is_err()
-  );
+  assert!(yojson_rs::parser::parse("{hoge : [null, 123, {fuga: 23}],}").is_err());
 }
