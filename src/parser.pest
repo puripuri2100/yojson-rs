@@ -10,7 +10,7 @@ json = _{ SOI ~ assoc ~ EOI }
 
 assoc = {
   "{" ~ "}" |
-  "{" ~ pair ~ ("," ~ pair)* ~ ","? ~ "}"
+  "{" ~ pair ~ ("," ~ pair)* ~ "}"
 }
 
 pair = { name ~ ":" ~ value }
@@ -68,7 +68,7 @@ string = { "\"" ~ inner ~ "\"" }
 
 array = {
   "[" ~ "]" |
-  "[" ~ value ~ ("," ~ value)* ~ ","? ~ "]"
+  "[" ~ value ~ ("," ~ value)* ~ "]"
 }
 
 tuple = {
